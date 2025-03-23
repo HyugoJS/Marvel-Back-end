@@ -3,7 +3,14 @@ const mongoose = require("mongoose");
 const User = mongoose.model("User", {
   email: String,
   username: String,
-  favorites: [{ type: String }],
+  favorites: [
+    {
+      id: { type: String },
+      name: { type: String },
+      image: { type: String },
+      description: { type: String },
+    },
+  ],
   token: String,
   hash: String,
   salt: String,

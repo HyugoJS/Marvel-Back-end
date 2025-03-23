@@ -20,7 +20,7 @@ router.post("/user/signup", async (req, res) => {
 
     const existEmail = await User.findOne({ email: req.body.email });
     if (existEmail) {
-      return res.json("this email is already taken");
+      return res.status(409).json({ message: "This email is already taken." });
     } else if (req.body.username === "") {
       return res.json("You have to choose a username");
     }
