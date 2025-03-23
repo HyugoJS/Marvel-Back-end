@@ -41,7 +41,7 @@ router.get("/comics/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const response = await axios.get(
-      `https://lereacteur-marvel-api.herokuapp.com/comic/${id}?apiKey=LEcD4FLFQ7ZlsXaB`
+      `https://lereacteur-marvel-api.herokuapp.com/comic/${id}?apiKey=${process.env.API_KEY}`
     );
 
     const comic = response.data;

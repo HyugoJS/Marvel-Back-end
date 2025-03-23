@@ -4,7 +4,7 @@ const app = express(); // création du serveur
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/Marvel"); // connecter a notre serveur
+mongoose.connect(process.env.MONGOOSE_KEY); // connecter a notre serveur
 
 app.use(express.json()); // param body
 app.use(cors());

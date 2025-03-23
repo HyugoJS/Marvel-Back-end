@@ -24,7 +24,7 @@ router.post("/favorite/character/:id", isAuthenticated, async (req, res) => {
       return res.status(400).json({ message: "Personnage déjà en favori" });
     }
     const response = await axios.get(
-      `http://localhost:3000/characters/${characterId}`
+      `https://site--marvel-back--fc7nwyvb2r4r.code.run/characters/${characterId}`
     );
 
     if (!response.data) {
@@ -67,7 +67,9 @@ router.post("/favorite/comics/:id", isAuthenticated, async (req, res) => {
     if (alreadyFavorite) {
       return res.status(400).json({ message: "Comic déjà en favori" });
     }
-    const response = await axios.get(`http://localhost:3000/comics/${comicId}`);
+    const response = await axios.get(
+      `https://site--marvel-back--fc7nwyvb2r4r.code.run/comics/${comicId}`
+    );
     console.log(response.data);
 
     if (!response.data) {
